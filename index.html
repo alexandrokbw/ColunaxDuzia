@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Análise de Colunas e Dúzias</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">Histórico de Colunas e Dúzias</h1>
+      <p class="subtitle">Sugestão por cruzamento: Coluna 2 + variável e Dúzia 2 + variável</p>
+    </div>
+
+    <div class="controls">
+      <input id="numeroInput" class="input" type="number" min="0" max="36" placeholder="Digite um número (0-36)" />
+      <button id="addBtn" class="button btn-add">Adicionar</button>
+      <button id="undoBtn" class="button btn-undo">Desfazer</button>
+      <button id="clearBtn" class="button btn-clear">Limpar</button>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total de jogadas</div>
+        <div id="totalJogadas" class="stat-value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Coluna variável</div>
+        <div id="colunaVariavel" class="stat-value grupo-1">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Dúzia variável</div>
+        <div id="duziaVariavel" class="stat-value grupo-2">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Colunas recentes</div>
+        <div id="gruposAtrasados" class="stat-value grupo-3">1, 2, 3</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 class="panel-title">Sugestão atual (interseção)</h2>
+      <p class="suggestion-context">Colunas: <strong>2</strong> + <strong id="sColVar">-</strong> | Dúzias: <strong>2</strong> + <strong id="sDuzVar">-</strong></p>
+      <div id="sugestao" class="suggestion-list empty-state">Aguardando dados para sugerir números.</div>
+    </div>
+
+    <div class="panel">
+      <h2 class="panel-title">Histórico</h2>
+      <div id="historicoWrapper">
+        <div class="empty-state">Nenhuma jogada registrada.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
